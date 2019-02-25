@@ -1,9 +1,21 @@
+int cols,rows;
+int scale;
 void setup(){
- size(500,500,P3D); 
+ int w = 600;
+ int h = 600;
+ size(600,600,P3D);
+ scale = 20;
+ cols = w / scale;
+ rows = h / scale;
+ println(cols);
 }
 
 void draw(){
-  background(0);
+  background(175);
   fill(255);
-  point(300,300,0);
+  for(int i = 0;i < cols;i++){
+    for(int j = 0;j < rows; j++){
+  rect(i * scale,j * scale,scale,scale);
+    }
+  }
 }
